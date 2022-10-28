@@ -7,6 +7,7 @@ public class Enemy : LivingEntity {
 
     protected override void Start() {
         base.Start();
+        info.Info[PlayerInfo.Name] = "²ÐÆÆÈÝÆ÷";
     }
 
     protected override void SetAction() {

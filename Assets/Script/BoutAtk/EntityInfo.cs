@@ -4,15 +4,47 @@ using UnityEngine;
 
 [System.Serializable]
 public class EntityInfo {
-    //闪避
-    public int m_Agility;
-    //攻击
-    public int m_Fighting;
-    //最大生命值
-    public int maxHealth;
-    //当前生命值
-    public int currentHealth;
-    //名称
-    public string name;
 
+    public Dictionary<PlayerInfo, string> Info;
+    public Dictionary<PlayerAttr, int> Attr;
+    public Dictionary<PlayerExtraAttr, float> ExtraAttr;
+
+    public EntityInfo() {
+        Info = new Dictionary<PlayerInfo, string>() {
+            { PlayerInfo.Name, "Player" }
+        };
+
+        Attr = new Dictionary<PlayerAttr, int>() {
+            { PlayerAttr.MaxHP, 20 },
+            { PlayerAttr.CurHP, 20 },
+            { PlayerAttr.Attack, 10 },
+            { PlayerAttr.Defense, 10 },
+        };
+
+        ExtraAttr = new Dictionary<PlayerExtraAttr, float>() {
+            { PlayerExtraAttr.Atk, 1.0f },
+            { PlayerExtraAttr.Def, 1.0f },
+        };
+    }
+
+}
+
+//角色信息
+public enum PlayerInfo {
+    Name,
+    Level,
+}
+
+//角色属性
+public enum PlayerAttr {
+    MaxHP,
+    CurHP,
+    Attack,
+    Defense,
+}
+
+//角色额外属性
+public enum PlayerExtraAttr {
+    Atk,  //攻击加成
+    Def,  //防御加成
 }

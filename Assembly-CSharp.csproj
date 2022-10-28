@@ -56,17 +56,19 @@
     <Compile Include="Assets\Script\BoutAtk\LivingAction.cs" />
     <Compile Include="Assets\Script\BoutAtk\BoutAtkUtils.cs" />
     <Compile Include="Assets\Script\BoutAtk\LivingEntity.cs" />
+    <Compile Include="Assets\Script\BoutAtk\FireBall.cs" />
     <Compile Include="Assets\Script\BoutAtk\Enemy.cs" />
     <Compile Include="Assets\Script\BoutAtk\EntityInfo.cs" />
     <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\BoutAtk\BoutAtkManage.cs" />
     <Compile Include="Assets\Script\BoutAtk\PlayerController.cs" />
     <Compile Include="Assets\Script\BoomEff.cs" />
-    <Compile Include="Assets\Script\BoutAtk\LivingHUD.cs" />
     <Compile Include="Assets\Script\BoutAtk\EffDestory.cs" />
     <Compile Include="Assets\Script\BoutAtk\Skill.cs" />
     <Compile Include="Assets\Script\BoutAtk\BUFF.cs" />
-    <Compile Include="Assets\Script\BoutAtk\FireBall.cs" />
+    <Compile Include="Assets\Script\BoutAtk\LivingHUD.cs" />
+    <Compile Include="Assets\Script\BoutAtk\BuffManage.cs" />
+    <Compile Include="Assets\Script\BoutAtk\config\SceneConfig.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

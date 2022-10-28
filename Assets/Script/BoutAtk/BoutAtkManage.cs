@@ -15,7 +15,7 @@ public class BoutAtkManage : MonoBehaviour {
     public GameObject buttonGroup;
     public Transform middlePos;
 
-    private LivingEntity currLivingEntity;
+    public LivingEntity currLivingEntity;
 
     private bool END = false;
     private int entityIndex = 0;
@@ -50,8 +50,8 @@ public class BoutAtkManage : MonoBehaviour {
 
     //更新HP
     void UpdateHP() {
-        myHUD.setHP(entityList[0].GetComponent<LivingEntity>().info.currentHealth);
-        enemyHUD.setHP(entityList[1].GetComponent<LivingEntity>().info.currentHealth);
+        myHUD.setHP(entityList[0].GetComponent<LivingEntity>().info.Attr[PlayerAttr.CurHP]);
+        enemyHUD.setHP(entityList[1].GetComponent<LivingEntity>().info.Attr[PlayerAttr.CurHP]);
     }
 
     //开始战斗
@@ -69,7 +69,7 @@ public class BoutAtkManage : MonoBehaviour {
 
     //回合开始
     private IEnumerator OnTurnStart() {
-        dialogText.text = currLivingEntity.info.name + "准备行动啦!";
+        dialogText.text = currLivingEntity.info.Info[PlayerInfo.Name] + "准备行动啦!";
         yield return null;
     }
 

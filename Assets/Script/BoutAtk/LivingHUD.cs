@@ -9,10 +9,10 @@ public class LivingHUD : MonoBehaviour {
     public Text mySliderValue;
 
     public void setHUD(EntityInfo info) {
-        myInfo.text = info.name;
-        mySlider.maxValue = info.maxHealth;
-        mySlider.value = info.currentHealth;
-        mySliderValue.text = info.currentHealth + "/" + info.currentHealth;
+        myInfo.text = info.Info[PlayerInfo.Name];
+        mySlider.maxValue = info.Attr[PlayerAttr.MaxHP];
+        mySlider.value = info.Attr[PlayerAttr.CurHP];
+        mySliderValue.text = info.Attr[PlayerAttr.CurHP] + "/" + info.Attr[PlayerAttr.MaxHP];
     }
 
 

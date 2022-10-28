@@ -50,42 +50,22 @@ public class LivingEntity : MonoBehaviour {
     }
 
     public virtual void GotHurt(int hit) {
-        info.currentHealth -= hit;
-
+        info.Attr[PlayerAttr.CurHP] -= hit;
+        int curHP = info.Attr[PlayerAttr.CurHP];
         HitEff();
-        if (info.currentHealth <= 0 && !isDie) {
+        if (curHP <= 0 && !isDie) {
             Die();
         }
     }
 
     public virtual void CureHP(int v) {
-        info.currentHealth += v;
-        if (info.currentHealth > info.maxHealth) {
-            info.currentHealth = info.maxHealth;
+        info.Attr[PlayerAttr.CurHP] += v;
+        int curHP = info.Attr[PlayerAttr.CurHP];
+        int maxHP = info.Attr[PlayerAttr.MaxHP];
+        if (curHP > maxHP) {
+            info.Attr[PlayerAttr.CurHP] = maxHP;
         }
     }
-
-    ////Ìí¼Óbuff
-    //public void AddBuff(BUFF buff) {
-    //    buffs.Add(buff);
-    //}
-
-    ////ÒÆ³ýbuff
-    //private void RemoveBuff(BUFF buff) {
-    //    buffs.Remove(buff);
-    //}
-
-    ////¸üÐÂbuff
-    //private void UpdateBuff() {
-    //    foreach(var buff in buffs) {
-
-    //    }
-    //}
-
-
-
-
-
 
     protected virtual void Die() {
         isDie = true;

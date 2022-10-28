@@ -4,12 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
-
-public delegate System.Action OnClickButton0();
-public delegate System.Action OnClickButton1();
-public delegate System.Action OnClickButton2();
-public delegate System.Action OnClickButton3();
-
 public class PlayerController : LivingEntity {
 
     public Button[] buttonArr; //按钮列表
@@ -25,6 +19,7 @@ public class PlayerController : LivingEntity {
                 buttonArr[i].GetComponentInChildren<Text>().text = skills[i].skillName;
             }
         }
+        info.Info[PlayerInfo.Name] = "大壮";
     }
 
     protected override void SetAction() {

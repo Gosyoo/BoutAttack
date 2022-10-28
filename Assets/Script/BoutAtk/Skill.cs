@@ -62,8 +62,8 @@ public class Skill {
         FightEff();
         yield return new WaitForSeconds(effTime);
         _entity.target.GotHurt(damage);
-        _entity.manage.SetDialogText(_entity.info.name + "使用了攻击，造成了" + damage + "点伤害");
-        Debug.Log(_entity.info.name + "造成了" + damage + "点伤害");
+        _entity.manage.SetDialogText(_entity.info.Info[PlayerInfo.Name] + "使用了攻击，造成了" + damage + "点伤害");
+        Debug.Log(_entity.info.Info[PlayerInfo.Name] + "造成了" + damage + "点伤害");
     }
 
     protected virtual IEnumerator Cure() {
@@ -71,17 +71,13 @@ public class Skill {
         CureEff();
         yield return new WaitForSeconds(effTime);
         _entity.CureHP(value);
-        _entity.manage.SetDialogText(_entity.info.name + "使用了治疗，恢复了" + value + "点生命");
-        Debug.Log(_entity.info.name + "恢复了" + value + "点生命");
+        _entity.manage.SetDialogText(_entity.info.Info[PlayerInfo.Name] + "使用了治疗，恢复了" + value + "点生命");
+        Debug.Log(_entity.info.Info[PlayerInfo.Name] + "恢复了" + value + "点生命");
     }
 
-    //protected virtual void Buff() {
-    //    BuffFunc func = new BuffFunc(() => {
-
-    //    });
-    //    BUFF buff = new BUFF(2, effPrefab, func);
-    //    _entity.AddBuff(buff);
-    //}
+    protected virtual void Buff() {
+        BuffManage.CreateBuff(BuffID.Buff_Atk, _entity);
+    }
 
     //protected virtual void DeBuff() {
     //    _entity.target.AddBuff();
